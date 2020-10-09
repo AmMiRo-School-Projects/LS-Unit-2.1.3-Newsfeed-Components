@@ -39,22 +39,25 @@ function menuCreator(arr) {
   const menu = document.createElement("div");
   menu.classList.add("menu");
   const list = document.createElement("ul");
-
+  // appends list to menu
   menu.append(list);
-
+  // creates li for each obj in arr
   arr.forEach(obj => {
     const li = document.createElement("li");
     li.textContent = obj;
     list.append(li);
   });
+  // selects .menu-button
   const menuButton = document.querySelector(".menu-button");
-
+  // event listener for menu-button
   menuButton.addEventListener("click", () => {
     menu.classList.toggle("menu--open");
   });
   return menu;
 }
 
+// selects header
 const header = document.querySelector(".header");
 
+// prepends menuCreator to header
 header.prepend(menuCreator(menuItems));
